@@ -2,12 +2,13 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueMeta from 'vue-meta'
 import Vuex from 'vuex'
-
+import {firestorePlugin} from 'vuefire'
 import store from './store'
 
 import './assets/css/index.css'
 
 Vue.use(Vuex)
+Vue.use(firestorePlugin)
 Vue.use(VueMeta, { refreshOnceOnNavegation: true })
 Vue.config.productionTip = false
 
