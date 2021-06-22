@@ -9,8 +9,8 @@
                 </div>
                 <div class="-mt-8 flex-1 shadow-md bg-gray-200 rounded-tr-3xl rounded-tl-3xl pb-5">
                     <div class="flex">
-                        <UserBox></UserBox>
-                        <!-- <WorkoutSelector /> -->
+                        <user-box></user-box>
+                        <workout-selector></workout-selector>
                         <div></div>
                     </div>
                     <div class="pb-10 flex justify-center">
@@ -26,7 +26,7 @@
                     <div>
                         <div class="space-y-4 ml-8 mr-8 mt-3 mb-1">
                             <div>
-                                <!-- <Exercise /> -->
+                                <exercise></exercise>
                             </div>
                         </div>
                     </div>
@@ -42,6 +42,8 @@
 <script>
 import { db } from "./db";
 import UserBox from "./components/UserBox.vue";
+import WorkoutSelector from "./components/WorkoutSelector.vue";
+import Exercise from "./components/Exercise.vue";
 
 export default {
     name: "App",
@@ -52,7 +54,9 @@ export default {
         }
     },
     components: {
-        UserBox
+        UserBox,
+        WorkoutSelector,
+        Exercise
     },
     data() {
         return {
