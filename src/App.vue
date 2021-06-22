@@ -10,7 +10,7 @@
                 <div class="-mt-8 flex-1 shadow-md bg-gray-200 rounded-tr-3xl rounded-tl-3xl pb-5">
                     <div class="flex">
                         <user-box></user-box>
-                        <workout-selector></workout-selector>
+                        <workout-selector workouts="users"></workout-selector>
                         <div></div>
                     </div>
                     <div class="pb-10 flex justify-center">
@@ -44,6 +44,7 @@ import { db } from "./db";
 import UserBox from "./components/UserBox.vue";
 import WorkoutSelector from "./components/WorkoutSelector.vue";
 import Exercise from "./components/Exercise.vue";
+import "boxicons";
 
 export default {
     name: "App",

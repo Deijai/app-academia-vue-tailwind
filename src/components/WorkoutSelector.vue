@@ -13,7 +13,8 @@
 
 <script>
 export default {
-    name: "WorkoutSelector"
+    name: "WorkoutSelector",
+    props: ["workouts"]
 };
 </script>
 
