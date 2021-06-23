@@ -1,20 +1,17 @@
-# Vue Tailwind Template
+# App Academia
+Um aplicativo simples para gerenciar seus treinos de boas, sem complicação.
 
-Criei este repositório para me ajudar na hora de desenvolver uma aplicação, pois acaba facilitando muito toda a configuração do ambiente.
-
-<p align="center">
-    <img src="https://i.imgur.com/oSUJWo7.png">
+<p>
+    <img src="./src/assets/img/app-image.png">
 </p>
 
-## Começando
-
-Para inicilizar e usar este template, é necessário ter duas ferramentas instaladas em sua máquina, o [Git](https://git-scm.com/) e o [Node.js](https://nodejs.org/).
+## Quer um app desse também?
 
 - Clone o projeto com os comando abaixo:
 ```
-$ git clone git@github.com:immichjs/vue-tailwind-template.git
+$ git clone git@github.com:mathefeitosa/app-academia-vue-tailwind.git
 
-$ cd vue-tailwind-template
+$ cd app-academia-vue-tailwind
 ```
 
 - Logo após, instale todas as dependencias com:
@@ -32,13 +29,11 @@ $ npm run serve
 $ npm run build
 ```
 
-Leia as documentações abaixo para continuar seu desenvolvimento com essas tecnologias.
+Documentações
 
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vue.js](https://br.vuejs.org/)
 - [Boxicons](https://boxicons.com/)
 - [Vue-Meta](https://www.npmjs.com/package/vue-meta)
 - [Vuex](https://vuex.vuejs.org/ptbr/)
-
-<p align="center">Template feito com 💖 por Mich.</p>
-
+- [Firestore] (https://firebase.google.com/docs/)

@@ -121,6 +121,7 @@ export default {
             db.collection("workouts")
                 .doc(this.selectedWorkout.id)
                 .delete();
+            this.selectedWorkout = "";
         },
         // here event is an object received from $emit in the exercise component
         // the object is -> {id: this.id, exercise: this.local}
