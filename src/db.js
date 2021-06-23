@@ -4,7 +4,7 @@ import "firebase/firestore";
 // Get a Firestore instance
 export const db = firebase
     .initializeApp({
-        apiKey: "AIzaSyAKmDxwgtpdJWuzBx4tkobiYp3Q5uOG5dA",
+        apiKey: process.env.DB_API_KEY,
         authDomain: "app-academia-vue.firebaseapp.com",
         projectId: "app-academia-vue",
         storageBucket: "app-academia-vue.appspot.com",
