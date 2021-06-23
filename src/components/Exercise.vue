@@ -43,7 +43,7 @@
                     <box-icon name="edit-alt"></box-icon>
                 </div>
             </div>
-            <div class="red-end-btn" v-if="editMode">
+            <div @click="exerciseDeleteHandler" class="red-end-btn" v-if="editMode">
                 <div class="flex-1">
                     <box-icon name="trash"></box-icon>
                 </div>
@@ -57,14 +57,7 @@ import "boxicons";
 
 export default {
     name: "Exercise",
-    props: {
-        id: String,
-        name: String,
-        weight: Number,
-        reps: Number,
-        sets: Number,
-        rest: Number
-    },
+    props: ["id", "name", "weight", "reps", "sets", "rest"],
     data() {
         return {
             editMode: false,
@@ -87,6 +80,9 @@ export default {
                 id: this.id,
                 exercise: this.local
             });
+        },
+        exerciseDeleteHandler() {
+            this.$emit("delete-exercise", this.id);
         }
     }
 };

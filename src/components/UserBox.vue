@@ -1,3 +1,4 @@
+// FOR FUTURE INCLUSION OF LOGIN FEATURE
 <template>
     <div class="space-y-3 m-6 ml-8 font-bold text-gray-700">
         <div class="flex justify-center items-center">
