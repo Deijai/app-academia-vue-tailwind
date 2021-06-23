@@ -17,8 +17,12 @@ $ cd app-academia-vue-tailwind
 ```
 $ npm i
 ```
+
+### Configurando o firestore
 Antes de inicializar o servidor, você precisa configurar o firestore em uma conta sua para o banco de dados funcionar corretamente.
 Após configurado, substitua as informações do seu banco no arquivo `db.js`.
+
+
 ### Para iniciar um servidor de desenvolvimento
 ```
 $ npm run serve
