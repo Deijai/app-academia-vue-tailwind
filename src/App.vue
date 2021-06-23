@@ -48,6 +48,7 @@
                             :sets="exercise.sets"
                             :rest="exercise.rest"
                             @update-exercise="updateExercise"
+                            @delete-exercise="deleteExercise"
                         />
                     </div>
                     <div v-if="selectedWorkout" @click="addExercise" class="add-exercise-button">
@@ -94,7 +95,6 @@ export default {
     methods: {
         selectWorkout(id) {
             this.selectedWorkout = this.workouts.find(w => w.id === id);
-            console.log("worked", this.selectedWorkout.name);
         },
         addWorkout() {
             db.collection("workouts").add({
@@ -111,13 +111,16 @@ export default {
                 rest: 45,
                 workout_owner_id: this.selectedWorkout.id
             });
-            console.log("added");
+        },
+        deleteExercise(exerciseId) {
+            db.collection("exercises")
+                .doc(exerciseId)
+                .delete();
         },
         deleteSelectedWorkout() {
             db.collection("workouts")
                 .doc(this.selectedWorkout.id)
                 .delete();
-            console.log("deleted", this.selectedWorkout.id);
         },
         // here event is an object received from $emit in the exercise component
         // the object is -> {id: this.id, exercise: this.local}
