@@ -1,41 +1,39 @@
 <template>
     <div class="exercise-tile">
-        <form class="flex justify-center text-white">
-            <div class="number-head-block">
-                <div v-if="editMode">
-                    <input type="number" maxlength="2" class="text-black w-14" />
-                </div>
-                <div>number</div>
-            </div>
+        <form class="exercise-form">
             <div class="exercise-info-block">
                 <div class="p-2 flex-1">
                     <div v-if="editMode">
-                        <input type="text" />
+                        <div>
+                            <input v-model="local.name" type="text" class="w-40" />
+                        </div>
+                        <div>
+                            Peso:
+                            <input v-model="local.weight" type="number" class="w-20" step=".5" /> kg
+                        </div>
+                        <div>
+                            Repetições:
+                            <input v-model="local.reps" type="number" class="w-20" />
+                        </div>
+                        <div>
+                            Sets:
+                            <input v-model="local.sets" type="number" class="w-20" />
+                        </div>
+                        <div>
+                            Descanço:
+                            <input v-model="local.rest" type="number" class="w-20" /> seg.
+                        </div>
                     </div>
-                    <div class="text-md font-bold flex-1">name</div>
-                    <div v-if="editMode">
-                        Peso:
-                        <input type="number" class="w-20" /> kg
+                    <div v-if="!editMode">
+                        <div class="text-md font-bold flex-1">{{name}}</div>
+                        <div>{{weight}} kg</div>
+                        <div>{{reps}} repetições</div>
+                        <div>{{sets}} séries</div>
+                        <div>Descançar {{rest}} seg.</div>
                     </div>
-                    <div>Peso: kg</div>
-                    <div v-if="editMode">
-                        Repetições:
-                        <input type="number" class="w-20" />
-                    </div>
-                    <div>Repetições:</div>
-                    <div v-if="editMode">
-                        Sets:
-                        <input type="number" class="w-20" />
-                    </div>
-                    <div>Sets:</div>
-                    <div v-if="editMode">
-                        Descanço:
-                        <input type="number" class="w-20" /> s
-                    </div>
-                    <div>Descanço: s</div>
                 </div>
             </div>
-            <div class="green-mid-btn" @click="switchEditor" v-if="editMode">
+            <div @click="exerciseChangeHandler" class="green-mid-btn" v-if="editMode">
                 <div class="flex-1">
                     <box-icon name="check"></box-icon>
                 </div>
@@ -59,14 +57,36 @@ import "boxicons";
 
 export default {
     name: "Exercise",
+    props: {
+        id: String,
+        name: String,
+        weight: Number,
+        reps: Number,
+        sets: Number,
+        rest: Number
+    },
     data() {
         return {
-            editMode: false
+            editMode: false,
+            local: {
+                name: this.name,
+                weight: this.weight,
+                reps: this.reps,
+                sets: this.sets,
+                rest: this.rest
+            }
         };
     },
     methods: {
         switchEditor() {
             this.editMode = !this.editMode;
+        },
+        exerciseChangeHandler() {
+            this.switchEditor();
+            this.$emit("update-exercise", {
+                id: this.id,
+                exercise: this.local
+            });
         }
     }
 };
@@ -85,10 +105,10 @@ export default {
 .exercise-tile {
     @apply flex justify-center text-white transform ease-in hover:scale-105 transition duration-100;
 }
-.number-head-block {
-    @apply p-2 bg-gray-900 rounded-tl-lg rounded-bl-lg text-2xl font-bold;
+.exercise-form {
+    @apply flex justify-center text-white border hover:border-black rounded-lg;
 }
 .exercise-info-block {
-    @apply flex-1 z-20 p-2 bg-gray-100 text-black;
+    @apply flex-1 z-20 p-2 bg-gray-100 text-black rounded-tl-lg rounded-bl-lg;
 }
 </style>
