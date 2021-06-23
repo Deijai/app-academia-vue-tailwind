@@ -36,4 +36,4 @@ Documentações
 - [Boxicons](https://boxicons.com/)
 - [Vue-Meta](https://www.npmjs.com/package/vue-meta)
 - [Vuex](https://vuex.vuejs.org/ptbr/)
-- [Firestore] (https://firebase.google.com/docs/)
+- [Firestore](https://firebase.google.com/docs/)
