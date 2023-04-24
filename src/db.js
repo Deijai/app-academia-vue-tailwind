@@ -5,11 +5,12 @@ import "firebase/firestore";
 export const db = firebase
     .initializeApp({
         apiKey: process.env.DB_API_KEY,
-        authDomain: "app-academia-vue.firebaseapp.com",
-        projectId: "app-academia-vue",
-        storageBucket: "app-academia-vue.appspot.com",
-        messagingSenderId: "1079825797450",
-        appId: "1:1079825797450:web:fe1f2a34c636a7691a71b3"
+        authDomain: "app-treino-539b7.firebaseapp.com",
+        projectId: "app-treino-539b7",
+        storageBucket: "app-treino-539b7.appspot.com",
+        messagingSenderId: "341746185995",
+        appId: "1:341746185995:web:32cf595b3a98cdd711940e",
+        measurementId: "G-69J2HVMMXL"
     })
     .firestore();
 
